@@ -1,10 +1,24 @@
 import React from "react";
 import "./App.css";
+import Settings from './settings/settings'
+import {
+    ThemeProvider,
+    theme,
+    CSSReset,
+    ChakraProvider
+} from "@chakra-ui/react";
 
-import { Heading } from "@chakra-ui/react";
-
-export default class App extends React.Component {
-    render() {
-        return <Heading>Hello, World!</Heading>;
-    }
+function App() {
+    return (
+        <>
+            <ChakraProvider>
+                <ThemeProvider theme={theme}>
+                    <CSSReset />
+                    <Settings />
+                </ThemeProvider>
+            </ChakraProvider>
+        </>
+    );
 }
+
+export default App; 
